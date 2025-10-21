@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Veículos - EJM</title>
+    <!-- Tailwind CSS para estilização rápida e moderna -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonte do Google para um visual mais limpo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Usando a fonte Inter como padrão */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Cabeçalho -->
+    <header class="bg-gray-900 text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex flex-col items-center">
+            <!-- Logo Removida -->
+            <h1 class="text-3xl font-bold text-center pt-4">EJM Veículos</h1>
+            <p class="text-center text-gray-300 mt-1">Veículos selecionados para você</p>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container mx-auto px-6 py-12">
+        <h2 class="text-4xl font-extrabold text-red-600 text-center mb-10">Nosso Estoque</h2>
+
+        <!-- Grid para os cartões de veículos -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- 
+            ========================================================================
+            INÍCIO DO MODELO DE VEÍCULO - COPIE E COLE DAQUI...
+            ========================================================================
+            -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
+                <!-- IMAGEM DO VEÍCULO -->
+                <!-- Troque o 'src' pela URL da foto do seu carro. Você pode hospedar em sites como o imgur.com -->
+                <img src="https://placehold.co/600x400/EFEFEF/333333?text=Fiat+Pulse" alt="Fiat Pulse Audace" class="w-full h-56 object-cover">
+                
+                <div class="p-6">
+                    <!-- NOME E MODELO -->
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Fiat Pulse Audace</h3>
+                    
+                    <!-- PREÇO -->
+                    <p class="text-3xl font-extrabold text-red-600 mb-4">R$ 109.900,00</p>
+                    
+                    <!-- DETALHES RÁPIDOS (Ano, KM, Motor, Câmbio) -->
+                    <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-gray-600 mb-4 border-t border-b border-gray-200 py-3">
+                        <div>
+                            <span class="font-semibold text-gray-800">Ano:</span> 2023/2023
+                        </div>
+                        <div>
+                            <span class="font-semibold text-gray-800">KM:</span> 12.000
+                        </div>
+                        <div>
+                            <span class="font-semibold text-gray-800">Motor:</span> 1.0 Turbo
+                        </div>
+                        <div>
+                            <span class="font-semibold text-gray-800">Câmbio:</span> Automático
+                        </div>
+                    </div>
+                    
+                    <!-- DESCRIÇÃO / OPCIONAIS -->
+                    <p class="text-gray-700 text-sm mb-5">
+                        Único dono, completo com painel digital, multimídia flutuante, rodas de liga leve e revisões em dia.
+                    </p>
+                    
+                    <!-- BOTÃO DE CONTATO (WhatsApp) -->
+                    <!-- O número e a mensagem são atualizados automaticamente -->
+                    <a href="https://api.whatsapp.com/send?phone=5511961681561&text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Fiat%20Pulse%20Audace" target="_blank" class="block w-full text-center bg-green-500 text-white font-bold py-3 px-4 rounded-lg hover:bg-green-600 transition-colors duration-300">
+                        Chamar no WhatsApp
+                    </a>
+                </div>
+            </div>
+            <!-- 
+            ========================================================================
+            ... ATÉ AQUI PARA ADICIONAR UM NOVO VEÍCULO.
+            ========================================================================
+            -->
+
+
+            <!-- Exemplo de Veículo 2 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
+                <img src="https://placehold.co/600x400/333333/FFFFFF?text=Jeep+Compass" alt="Jeep Compass Longitude" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Jeep Compass Longitude</h3>
+                    <p class="text-3xl font-extrabold text-red-600 mb-4">R$ 134.500,00</p>
+                    <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-gray-600 mb-4 border-t border-b border-gray-200 py-3">
+                        <div><span class="font-semibold text-gray-800">Ano:</span> 2021/2021</div>
+                        <div><span class="font-semibold text-gray-800">KM:</span> 35.800</div>
+                        <div><span class="font-semibold text-gray-800">Motor:</span> 1.3 Turbo Flex</div>
+                        <div><span class="font-semibold text-gray-800">Câmbio:</span> Automático</div>
+                    </div>
+                    <p class="text-gray-700 text-sm mb-5">
+                        Versão Longitude com bancos de couro, faróis full LED e sistema de som premium. Impecável.
+                    </p>
+                    <a href="https://api.whatsapp.com/send?phone=5511961681561&text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Jeep%20Compass%20Longitude" target="_blank" class="block w-full text-center bg-green-500 text-white font-bold py-3 px-4 rounded-lg hover:bg-green-600 transition-colors duration-300">
+                        Chamar no WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Exemplo de Veículo 3 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
+                <img src="https://placehold.co/600x400/cccccc/000000?text=VW+Nivus" alt="Volkswagen Nivus Highline" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Volkswagen Nivus Highline</h3>
+                    <p class="text-3xl font-extrabold text-red-600 mb-4">R$ 118.990,00</p>
+                    <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-gray-600 mb-4 border-t border-b border-gray-200 py-3">
+                         <div><span class="font-semibold text-gray-800">Ano:</span> 2022/2023</div>
+                         <div><span class="font-semibold text-gray-800">KM:</span> 15.000</div>
+                         <div><span class="font-semibold text-gray-800">Motor:</span> 1.0 200TSI</div>
+                         <div><span class="font-semibold text-gray-800">Câmbio:</span> Automático</div>
+                    </div>
+                    <p class="text-gray-700 text-sm mb-5">
+                        SUV Coupé com ACC (piloto automático adaptativo), painel VW Play e um porta-malas excelente.
+                    </p>
+                    <a href="https://api.whatsapp.com/send?phone=5511961681561&text=Ol%C3%A1%2C%20tenho%20interesse%20no%20VW%20Nivus%20Highline" target="_blank" class="block w-full text-center bg-green-500 text-white font-bold py-3 px-4 rounded-lg hover:bg-green-600 transition-colors duration-300">
+                        Chamar no WhatsApp
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-900 text-white mt-12">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p class="text-2xl font-bold mb-2">Entre em Contato</p>
+            <p class="text-gray-300">Telefone / WhatsApp: (11) 96168-1561</p>
+            <p class="text-gray-300 mt-1">Endereço: Sua Rua, Nº 123 - Sua Cidade</p>
+            <div class="mt-4 border-t border-gray-700 pt-4">
+                <p class="text-sm text-gray-500">&copy; 2024 EJM Veículos. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
