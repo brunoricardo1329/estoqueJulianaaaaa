@@ -6,14 +6,20 @@
     <title>Catálogo de Veículos - EJM</title>
     <!-- Tailwind CSS para estilização rápida e moderna -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Ícones (para a galeria) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Fonte do Google para um visual mais limpo -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css/2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         /* Usando a fonte Inter como padrão */
         body {
             font-family: 'Inter', sans-serif;
+        }
+        /* Esconde o modal da galeria por padrão */
+        #gallery-modal {
+            display: none;
         }
     </style>
 </head>
@@ -22,7 +28,6 @@
     <!-- Cabeçalho -->
     <header class="bg-gray-900 text-white shadow-lg">
         <div class="container mx-auto px-6 py-4 flex flex-col items-center">
-            <!-- Logo Removida -->
             <h1 class="text-3xl font-bold text-center pt-4">EJM Veículos</h1>
             <p class="text-center text-gray-300 mt-1">Veículos selecionados para você</p>
         </div>
@@ -41,40 +46,27 @@
             ========================================================================
             -->
             <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
-                <!-- IMAGEM DO VEÍCULO -->
-                <!-- Troque o 'src' pela URL da foto do seu carro. Você pode hospedar em sites como o imgur.com -->
-                <img src="https://placehold.co/600x400/EFEFEF/333333?text=Fiat+Pulse" alt="Fiat Pulse Audace" class="w-full h-56 object-cover">
+                <!-- IMAGEM DO VEÍCULO COM TRIGGER DA GALERIA -->
+                <div class="relative group cursor-pointer" onclick="openGallery(this)" 
+                     data-images="https://placehold.co/800x600/EFEFEF/333333?text=Pulse+-+Frente,https://placehold.co/800x600/EFEFEF/333333?text=Pulse+-+Interior,https://placehold.co/800x600/EFEFEF/333333?text=Pulse+-+Roda,https://placehold.co/800x600/EFEFEF/333333?text=Pulse+-+Traseira">
+                    <img src="https://placehold.co/600x400/EFEFEF/333333?text=Fiat+Pulse" alt="Fiat Pulse Audace" class="w-full h-56 object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                        <i class="fa-solid fa-images text-white text-4xl opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                    </div>
+                </div>
                 
                 <div class="p-6">
-                    <!-- NOME E MODELO -->
                     <h3 class="text-2xl font-bold text-gray-900 mb-2">Fiat Pulse Audace</h3>
-                    
-                    <!-- PREÇO -->
                     <p class="text-3xl font-extrabold text-red-600 mb-4">R$ 109.900,00</p>
-                    
-                    <!-- DETALHES RÁPIDOS (Ano, KM, Motor, Câmbio) -->
                     <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-gray-600 mb-4 border-t border-b border-gray-200 py-3">
-                        <div>
-                            <span class="font-semibold text-gray-800">Ano:</span> 2023/2023
-                        </div>
-                        <div>
-                            <span class="font-semibold text-gray-800">KM:</span> 12.000
-                        </div>
-                        <div>
-                            <span class="font-semibold text-gray-800">Motor:</span> 1.0 Turbo
-                        </div>
-                        <div>
-                            <span class="font-semibold text-gray-800">Câmbio:</span> Automático
-                        </div>
+                        <div><span class="font-semibold text-gray-800">Ano:</span> 2023/2023</div>
+                        <div><span class="font-semibold text-gray-800">KM:</span> 12.000</div>
+                        <div><span class="font-semibold text-gray-800">Motor:</span> 1.0 Turbo</div>
+                        <div><span class="font-semibold text-gray-800">Câmbio:</span> Automático</div>
                     </div>
-                    
-                    <!-- DESCRIÇÃO / OPCIONAIS -->
                     <p class="text-gray-700 text-sm mb-5">
                         Único dono, completo com painel digital, multimídia flutuante, rodas de liga leve e revisões em dia.
                     </p>
-                    
-                    <!-- BOTÃO DE CONTATO (WhatsApp) -->
-                    <!-- O número e a mensagem são atualizados automaticamente -->
                     <a href="https://api.whatsapp.com/send?phone=5511961681561&text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Fiat%20Pulse%20Audace" target="_blank" class="block w-full text-center bg-green-500 text-white font-bold py-3 px-4 rounded-lg hover:bg-green-600 transition-colors duration-300">
                         Chamar no WhatsApp
                     </a>
@@ -89,7 +81,13 @@
 
             <!-- Exemplo de Veículo 2 -->
             <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
-                <img src="https://placehold.co/600x400/333333/FFFFFF?text=Jeep+Compass" alt="Jeep Compass Longitude" class="w-full h-56 object-cover">
+                <div class="relative group cursor-pointer" onclick="openGallery(this)" 
+                     data-images="https://placehold.co/800x600/333333/FFFFFF?text=Compass+-+Frente,https://placehold.co/800x600/333333/FFFFFF?text=Compass+-+Painel,https://placehold.co/800x600/333333/FFFFFF?text=Compass+-+Bancos">
+                    <img src="https://placehold.co/600x400/333333/FFFFFF?text=Jeep+Compass" alt="Jeep Compass Longitude" class="w-full h-56 object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                        <i class="fa-solid fa-images text-white text-4xl opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                    </div>
+                </div>
                 <div class="p-6">
                     <h3 class="text-2xl font-bold text-gray-900 mb-2">Jeep Compass Longitude</h3>
                     <p class="text-3xl font-extrabold text-red-600 mb-4">R$ 134.500,00</p>
@@ -110,7 +108,13 @@
 
             <!-- Exemplo de Veículo 3 -->
             <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
-                <img src="https://placehold.co/600x400/cccccc/000000?text=VW+Nivus" alt="Volkswagen Nivus Highline" class="w-full h-56 object-cover">
+                <div class="relative group cursor-pointer" onclick="openGallery(this)" 
+                     data-images="https://placehold.co/800x600/cccccc/000000?text=Nivus+-+Principal,https://placehold.co/800x600/cccccc/000000?text=Nivus+-+VW+Play,https://placehold.co/800x600/cccccc/000000?text=Nivus+-+Volante,https://placehold.co/800x600/cccccc/000000?text=Nivus+-+Porta-malas">
+                    <img src="https://placehold.co/600x400/cccccc/000000?text=VW+Nivus" alt="Volkswagen Nivus Highline" class="w-full h-56 object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                        <i class="fa-solid fa-images text-white text-4xl opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                    </div>
+                </div>
                 <div class="p-6">
                     <h3 class="text-2xl font-bold text-gray-900 mb-2">Volkswagen Nivus Highline</h3>
                     <p class="text-3xl font-extrabold text-red-600 mb-4">R$ 118.990,00</p>
@@ -144,6 +148,75 @@
         </div>
     </footer>
 
+    <!-- Modal da Galeria -->
+    <div id="gallery-modal" class="fixed inset-0 bg-black bg-opacity-90 z-50 items-center justify-center p-4">
+        <button onclick="closeGallery()" class="absolute top-4 right-4 text-white text-3xl z-50">&times;</button>
+        <button id="prev-btn" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-4xl bg-black bg-opacity-50 p-2 rounded-full"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="w-full h-full flex items-center justify-center">
+            <img id="gallery-image" src="" alt="" class="max-w-full max-h-full object-contain">
+        </div>
+        <button id="next-btn" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-4xl bg-black bg-opacity-50 p-2 rounded-full"><i class="fa-solid fa-chevron-right"></i></button>
+        <div id="image-counter" class="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-lg"></div>
+    </div>
+
+
+    <script>
+        // --- LÓGICA DA GALERIA ---
+        const galleryModal = document.getElementById('gallery-modal');
+        const galleryImage = document.getElementById('gallery-image');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const imageCounter = document.getElementById('image-counter');
+
+        let currentImages = [];
+        let currentIndex = 0;
+
+        function openGallery(element) {
+            currentImages = element.dataset.images.split(',');
+            currentIndex = 0;
+            updateImage();
+            galleryModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Evita scroll da página ao fundo
+        }
+
+        function closeGallery() {
+            galleryModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function updateImage() {
+            galleryImage.src = currentImages[currentIndex];
+            imageCounter.textContent = `${currentIndex + 1} / ${currentImages.length}`;
+        }
+
+        function showNextImage() {
+            currentIndex = (currentIndex + 1) % currentImages.length;
+            updateImage();
+        }
+
+        function showPrevImage() {
+            currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+            updateImage();
+        }
+
+        nextBtn.addEventListener('click', showNextImage);
+        prevBtn.addEventListener('click', showPrevImage);
+
+        // Fechar com a tecla 'Esc'
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && galleryModal.style.display === 'flex') {
+                closeGallery();
+            }
+        });
+
+        // Fechar ao clicar fora da imagem (na área escura)
+        galleryModal.addEventListener('click', (e) => {
+            if (e.target === galleryModal) {
+                closeGallery();
+            }
+        });
+
+    </script>
 </body>
 </html>
 
